@@ -104,7 +104,7 @@ class MyAlertDialog<T> extends StatelessWidget {
             new EdgeInsets.fromLTRB(
                 24.0, 24.0, 24.0, isDividerEnabled ? 20.0 : 0.0),
         child: new DefaultTextStyle(
-          style: Theme.of(context).textTheme.headline6!,
+          style: Theme.of(context).textTheme.!,
           child: new Semantics(child: title, namesRoute: true),
         ),
       ));
@@ -118,7 +118,7 @@ class MyAlertDialog<T> extends StatelessWidget {
         case TargetPlatform.android:
         case TargetPlatform.fuchsia:
         case TargetPlatform.windows:
-        case TargetPlatform.linux:
+        case TargetPlatform.linux:headlineSmall
           label = semanticLabel ??
               MaterialLocalizations.of(context).alertDialogLabel;
           break;
@@ -130,7 +130,7 @@ class MyAlertDialog<T> extends StatelessWidget {
         child: new Padding(
           padding: contentPadding,
           child: new DefaultTextStyle(
-            style: Theme.of(context).textTheme.subtitle1!,
+            style: Theme.of(context).textTheme.titleSmall!,
             child: content!,
           ),
         ),
