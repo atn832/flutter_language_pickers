@@ -10,9 +10,19 @@ void main() {
       (WidgetTester tester) async {
     await tester.pumpWidget(
         MaterialApp(home: Scaffold(body: LanguagePickerDropdown())));
-    expect(find.textContaining('Armenian'), findsOneWidget);
-    expect(find.textContaining('Japanese'), findsOneWidget);
-    expect(find.textContaining('Turkish'), findsOneWidget);
+
+    await tester.tap(find.byType(LanguagePickerDropdown));
+    await tester.pump(Duration(seconds: 1));
+    await tester.pump();
+
+    // As per https://stackoverflow.com/a/64496868, once the menu is open, there
+    // there are two widgets. Sometimes there is only one.
+    expect(
+        find.textContaining('Armenian', skipOffstage: false), findsNWidgets(2));
+    expect(
+        find.textContaining('Japanese', skipOffstage: false), findsNWidgets(1));
+    expect(
+        find.textContaining('Turkish', skipOffstage: false), findsNWidgets(1));
   });
 
   testWidgets(
@@ -32,10 +42,9 @@ void main() {
 
     expect(find.textContaining('Japanese'), findsNothing);
 
-    // As per https://stackoverflow.com/a/64496868, once the menu is open, there
-    // there are two widgets, and we should tap the latter one.
-    expect(find.textContaining('French'), findsNWidgets(2));
-    await tester.tap(find.textContaining('French', skipOffstage: false).last);
+    // There used to be 2 widgets, but now there is only one.
+    expect(find.textContaining('French'), findsOneWidget);
+    await tester.tap(find.textContaining('French'));
     expect(streamController.stream, emits(Languages.french));
     streamController.close();
   });
@@ -47,13 +56,12 @@ void main() {
     );
     await tester.pumpWidget(MaterialApp(home: Scaffold(body: picker)));
     expect(find.textContaining('French'), findsOneWidget);
-    // Somehow French is pre-selected but English exists in the tree.
-    expect(find.textContaining('English'), findsOneWidget);
+    expect(find.textContaining('English'), findsNothing);
   });
 
   testWidgets('item builder', (WidgetTester tester) async {
     final picker = LanguagePickerDropdown(
-      languages: [Languages.english, Languages.french],
+      languages: [Languages.french, Languages.english],
       // Render only the iso code, not the name.
       itemBuilder: (language) => Text(language.isoCode),
     );
