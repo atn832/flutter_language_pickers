@@ -1,6 +1,6 @@
-## 0.4.4
+## 0.4.4+1
 
-Fixed deprecated TextStyles. Thank you [sczesla](https://github.com/sczesla) and [https://github.com/AhmedOs90](AhmedOs90)!
+Fixed deprecated TextStyles. Thank you [sczesla](https://github.com/sczesla) and [AhmedOs90](https://github.com/AhmedOs90)!
 
 ## 0.4.3
 
