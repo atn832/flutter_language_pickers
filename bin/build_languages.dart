@@ -9,6 +9,8 @@ toGetterName(String languageName) => languageName
     .replaceAll(RegExp('[,\(\)]'), '')
     // Replace punctuated name
     .replaceAll('ü', 'u')
+    // Bokmål ==> Bokmal
+    .replaceAll('å', 'a')
     .camelCase;
 
 /// Reads languages.json and generates lib/languages.g.dart, which contains
@@ -21,7 +23,7 @@ main() {
       .toList();
   final getters = languages.map((l) {
     final getterName = toGetterName(l.name);
-    return "  static Language get $getterName => Language('${l.isoCode}', '${l.name}');";
+    return "  static Language get $getterName => Language('${l.isoCode}', '${l.name}', '${l.nativeName}');";
   });
 
   final defaultLanguages = '''
