@@ -1,14 +1,18 @@
+## 0.4.4+1
+
+Fixed deprecated TextStyles. Thank you [sczesla](https://github.com/sczesla) and [AhmedOs90](https://github.com/AhmedOs90)!
+
 ## 0.4.3
 
-- Fixed bug when Language was being used as a Key in a Set or Map.
+Fixed bug when Language was being used as a Key in a Set or Map.
 
 ## 0.4.2
 
-- Implemented LanguagePickerDropdownController.
+Implemented LanguagePickerDropdownController.
 
 ## 0.4.1
 
-- Restored finding a language by ISO code as `Language.fromIsoCode(isoCode)`.
+Restored finding a language by ISO code as `Language.fromIsoCode(isoCode)`.
 
 ## 0.4.0
 
@@ -26,7 +30,7 @@ Other:
 
 ## 0.3.0+1
 
-- Documented usage example.
+Documented usage example.
 
 ## 0.3.0
 

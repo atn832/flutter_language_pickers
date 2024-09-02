@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print, library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter/cupertino.dart';
@@ -5,9 +7,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:language_picker/languages.dart';
 import 'package:language_picker/language_picker.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp(key: Key('app')));
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,13 +19,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'language_picker Example'),
+      home: const MyHomePage(title: 'language_picker Example'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -38,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget _buildDropdownItem(Language language) {
     return Row(
       children: <Widget>[
-        SizedBox(
+        const SizedBox(
           width: 8.0,
         ),
         Text("${language.name} (${language.isoCode})"),
@@ -50,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget _buildDialogItem(Language language) => Row(
         children: <Widget>[
           Text(language.name),
-          SizedBox(width: 8.0),
+          const SizedBox(width: 8.0),
           Flexible(child: Text("(${language.isoCode})"))
         ],
       );
@@ -60,11 +64,12 @@ class _MyHomePageState extends State<MyHomePage> {
         builder: (context) => Theme(
             data: Theme.of(context).copyWith(primaryColor: Colors.pink),
             child: LanguagePickerDialog(
-                titlePadding: EdgeInsets.all(8.0),
+                titlePadding: const EdgeInsets.all(8.0),
                 searchCursorColor: Colors.pinkAccent,
-                searchInputDecoration: InputDecoration(hintText: 'Search...'),
+                searchInputDecoration:
+                    const InputDecoration(hintText: 'Search...'),
                 isSearchable: true,
-                title: Text('Select your language'),
+                title: const Text('Select your language'),
                 onValuePicked: (Language language) => setState(() {
                       _selectedDialogLanguage = language;
                       print(_selectedDialogLanguage.name);
@@ -90,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget _buildCupertinoItem(Language language) => Row(
         children: <Widget>[
           Text("+${language.name}"),
-          SizedBox(width: 8.0),
+          const SizedBox(width: 8.0),
           Flexible(child: Text(language.name))
         ],
       );
@@ -121,8 +126,8 @@ class _MyHomePageState extends State<MyHomePage> {
               Expanded(
                 child: Center(
                   child: MaterialButton(
-                    child: Text("Push"),
                     onPressed: _openLanguagePickerDialog,
+                    child: const Text("Push"),
                   ),
                 ),
               ),
