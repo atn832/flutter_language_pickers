@@ -55,6 +55,8 @@ LanguagePickerDropdown(
 final languageBuilder = (language) => Text(language.name);
 ```
 
+You can also use `language.nativeName`.
+
 ### Customize the list of languages
 
 ```dart

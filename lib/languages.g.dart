@@ -26,6 +26,8 @@ class Languages {
   static Language get bihariLanguages =>
       Language('bh', 'Bihari Languages', 'भोजपुरी');
   static Language get bislama => Language('bi', 'Bislama', 'Bislama');
+  static Language get norwegianBokmal =>
+      Language('nb', 'Norwegian Bokmål', 'Norsk bokmål');
   static Language get bosnian => Language('bs', 'Bosnian', 'Bosanski jezik');
   static Language get breton => Language('br', 'Breton', 'Brezhoneg');
   static Language get bulgarian =>
@@ -75,11 +77,12 @@ class Languages {
   static Language get ganda => Language('lg', 'Ganda', 'Luganda');
   static Language get georgian => Language('ka', 'Georgian', 'ქართული');
   static Language get german => Language('de', 'German', 'Deutsch');
-  static Language get greek => Language('el', 'Greek', 'Ελληνικά');
+  static Language get greekModern1453 =>
+      Language('el', 'Greek, Modern (1453-)', 'Ελληνικά');
   static Language get guarani => Language('gn', 'Guarani', 'Avañeẽ');
   static Language get gujarati => Language('gu', 'Gujarati', 'ગુજરાતી');
   static Language get haitian => Language('ht', 'Haitian', 'Kreyòl ayisyen');
-  static Language get hausa => Language('ha', 'Hausa', 'Hausa, هَوُسَ"');
+  static Language get hausa => Language('ha', 'Hausa', 'Hausa, هَوُسَ');
   static Language get hebrew => Language('he', 'Hebrew', 'עברית');
   static Language get herero => Language('hz', 'Herero', 'Otjiherero');
   static Language get hindi => Language('hi', 'Hindi', 'हिन्दी, हिंदी');
@@ -131,7 +134,7 @@ class Languages {
   static Language get luxembourgish =>
       Language('lb', 'Luxembourgish', 'Lëtzebuergesch');
   static Language get macedonian =>
-      Language('mk', 'Macedonian', '"македонски јазик');
+      Language('mk', 'Macedonian', 'македонски јазик');
   static Language get malagasy => Language('mg', 'Malagasy', 'Malagasy fiteny');
   static Language get malay =>
       Language('ms', 'Malay', 'Bahasa Melayu, بهاس ملايو‎');
@@ -157,7 +160,8 @@ class Languages {
   static Language get norwegian => Language('no', 'Norwegian', 'Norsk');
   static Language get norwegianNynorsk =>
       Language('nn', 'Norwegian Nynorsk', 'Norsk nynorsk');
-  static Language get occitan => Language('oc', 'Occitan', 'Occitan');
+  static Language get occitanPost1500 =>
+      Language('oc', 'Occitan (post 1500)', 'Occitan');
   static Language get ojibwa => Language('oj', 'Ojibwa', 'ᐊᓂᔑᓈᐯᒧᐎᓐ');
   static Language get oriya => Language('or', 'Oriya', 'ଓଡ଼ିଆ');
   static Language get oromo => Language('om', 'Oromo', 'Afaan Oromoo');
@@ -256,6 +260,7 @@ class Languages {
     Languages.bengali,
     Languages.bihariLanguages,
     Languages.bislama,
+    Languages.norwegianBokmal,
     Languages.bosnian,
     Languages.breton,
     Languages.bulgarian,
@@ -293,7 +298,7 @@ class Languages {
     Languages.ganda,
     Languages.georgian,
     Languages.german,
-    Languages.greek,
+    Languages.greekModern1453,
     Languages.guarani,
     Languages.gujarati,
     Languages.haitian,
@@ -355,7 +360,7 @@ class Languages {
     Languages.northernSami,
     Languages.norwegian,
     Languages.norwegianNynorsk,
-    Languages.occitan,
+    Languages.occitanPost1500,
     Languages.ojibwa,
     Languages.oriya,
     Languages.oromo,
