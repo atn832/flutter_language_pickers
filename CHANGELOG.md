@@ -1,3 +1,7 @@
+## 0.4.5
+
+Implemented `Language.nativeName`. Thank you [butterbrain](https://github.com/butterbrain)! [PR-7](https://github.com/atn832/language_picker/pull/7).
+
 ## 0.4.4+1
 
 Fixed deprecated TextStyles. Thank you [sczesla](https://github.com/sczesla) and [AhmedOs90](https://github.com/AhmedOs90)!
